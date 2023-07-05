@@ -1,0 +1,10 @@
+$ kubectl exec --stdin --tty -n helm-app helm-app-jenkins-0 -- /bin/sh
+Defaulted container "jenkins" out of: jenkins, config-reload, init (init)
+error: Internal error occurred: error executing command in container: failed to exec in container: failed to start exec "98a28cb6706d973fe3b539ce149f68486dbff4a132caba0e42f46fe5e857f4a9": OCI runtime exec failed: exec failed: unable to start container process: exec: "C:/Program Files/Git/usr/bin/sh": stat C:/Program Files/Git/usr/bin/sh: no such file or directory: unknown
+
+kubectl exec -n helm-app helm-app-jenkins-0  container 5d4283f601a4124345f0362b08c6b6c7eae0f91a69755753001176eaa97123aa -- /bin/bash
+kubectl exec --stdin --tty -n helm-app helm-app-jenkins-0 -- /bin/bash
+
+$ kubectl -n helm-app get pods
+NAME                 READY   STATUS    RESTARTS   AGE
+helm-app-jenkins-0   2/2     Running   0          45m
